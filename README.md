@@ -7,7 +7,7 @@ Segunda entrega: https://docs.google.com/document/d/19jHU73Ou8E6WXQDDAqlXaYGT6g-
 
 
 ## ¿Cómo organizar la solución?
-En el archivo TP.hs declarar lo necesario para resolver lo pedido en el enunciado.
+En el archivo TP.hs declarar lo necesario para resolver lo pedido en el enunciado después de la declaración del módulo TP (esa línea permite que el archivo de tests pueda importar toda la lógica).
 
 En el archivo Tests.hs completar los datos de prueba incluyendo la consulta para lograr lo pedido por el test correspondiente y el valor de retorno esperado. Por ejemplo, si queremos testear que 2 + 2 es 4 y tenemos:
 
