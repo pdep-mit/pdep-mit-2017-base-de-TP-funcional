@@ -31,12 +31,39 @@ datosTest5 5 = ("Si Cristian toma un Tintico queda con resistencia 2", undefined
 datosTest5 6 = ("Si Ana toma un Tintico queda con resistencia 130", undefined, ResultadoDeTipoDesconocido)
 datosTest5 7 = ("Si Rodri toma una Soda de fuerza 2 queda con nombre errpRodri", undefined, ResultadoDeTipoDesconocido)
 datosTest5 8 = ("Si Ana toma una Soda de fuerza 10 queda con nombre errrrrrrrrrpAna", undefined, ResultadoDeTipoDesconocido)
-datosTest5 9 = ("Si Ana toma una Soda de fuerza 10 queda con nombre epAna", undefined, ResultadoDeTipoDesconocido)
+datosTest5 9 = ("Si Ana toma una Soda de fuerza 0 queda con nombre epAna", undefined, ResultadoDeTipoDesconocido)
 
 datosTest6 1 = ("Si Rodri se rescata 5 horas queda con 255 de resistencia", undefined, ResultadoDeTipoDesconocido)
 datosTest6 2 = ("Si Rodri se rescata 1 hora queda con 155 de resistencia", undefined, ResultadoDeTipoDesconocido)
 
 datosTest7 1 = ("Itinerario de Ana", undefined, ResultadoDeTipoDesconocido)
+
+
+--- ENTREGA 2 ---
+datosEntrega2Test1b 1 = ("Marcos toma una soda de nivel 3 y queda con 2 bebidas y con 40 de resistencia", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test1c 1 = ("Rodri toma una soda de nivel 1 y una soda de nivel 2 y queda con nombre errperpRodri", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test1c 2 = ("Marcos toma un klusener de huevo, un tintico y una jarraLoca y queda con 30 de resistencia y con 4 bebidas en el historial", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test1d 1 = ("Marcos pide “dame otro” y queda con 2 bebidas en el historial y 34 de resistencia", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test1d 2 = ("Rodri toma una soda de nivel 1, y “dame otro” da como resultado que tiene 3 bebidas y su nombre queda “erperpRodri”", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test2b 1 = ("Rodri puede tomar dos bebidas, entre un grog XD, un tintico y un klusener de frutilla", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test2b 2 = ("Entre un grog XD, un tintico, un klusener de fruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuutilla Rodri se puede tomar una sola bebida", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test3b 1 = ("Rodri hace una salida de amigos... y le pasa de todo", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test4a 1 = ("la intensidad de la mezcla explosiva es 1.6", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test4a 2 = ("la intensidad de la salidaDeAmigos es 4.0", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test4a 3 = ("la intensidad del itinerario basico es 0.8", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test4b 1 = ("Entre la salida de amigos, la mezcla explosiva y el itinerario básico, el itinerario más intenso es la salida de amigos", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test4b' 1 = ("Rodri hace el itinerario más intenso entre una salida de amigos, la mezcla explosiva y el itinerario básico y realiza salida de amigos", undefined, ResultadoDeTipoDesconocido)
+
+datosEntrega2Test6 1 = ("Roberto Carlos se hace amigo de Ana, toma una jarra popular de espirituosidad 0, sigue quedando con una sola amiga (Ana)", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test6 2 = ("Roberto Carlos se hace amigo de Ana, toma una jarra popular de espirituosidad 3, queda con 3 amigos (Ana, Marcos y Rodri)", undefined, ResultadoDeTipoDesconocido)
+datosEntrega2Test6 3 = ("Cristian se hace amigo de Ana. Roberto Carlos se hace amigo de Cristian, toma una jarra popular de espirituosidad 4, queda con 4 amigos (Cristian, Ana, Marcos y Rodri)", undefined, ResultadoDeTipoDesconocido)
 
 -- TESTS AUTOMATICOS (no modificar)
 
@@ -44,10 +71,19 @@ armarTest fDatosTest = (\(titulo, resultado, esperado) -> TestLabel titulo (resu
 
 armarTestSuite titulo fDatosTest cant = (TestLabel titulo . TestList . map (armarTest fDatosTest)) [1.. cant]
 tests = TestList [
-    armarTestSuite "Punto 3" datosTest3 4,
-    armarTestSuite "Punto 4" datosTest4 3,
-    armarTestSuite "Punto 5" datosTest5 9,
-    armarTestSuite "Punto 6" datosTest6 2,
-    armarTestSuite "Punto 7" datosTest7 1
+    armarTestSuite "Entrega 1 Punto 3" datosTest3 4,
+    armarTestSuite "Entrega 1 Punto 4" datosTest4 3,
+    armarTestSuite "Entrega 1 Punto 5" datosTest5 9,
+    armarTestSuite "Entrega 1 Punto 6" datosTest6 2,
+    armarTestSuite "Entrega 1 Punto 7" datosTest7 1,
+    armarTestSuite "Entrega 2 Punto 1b" datosEntrega2Test1b 1,
+    armarTestSuite "Entrega 2 Punto 1c" datosEntrega2Test1c 2,
+    armarTestSuite "Entrega 2 Punto 1d" datosEntrega2Test1d 2,
+    armarTestSuite "Entrega 2 Punto 2b" datosEntrega2Test2b 2,
+    armarTestSuite "Entrega 2 Punto 3b" datosEntrega2Test3b 1,
+    armarTestSuite "Entrega 2 Punto 4a" datosEntrega2Test4a 3,
+    armarTestSuite "Entrega 2 Punto 4b" datosEntrega2Test4b 1,
+    armarTestSuite "Entrega 2 Punto 4b" datosEntrega2Test4b' 1,
+    armarTestSuite "Entrega 2 Punto 6" datosEntrega2Test6 3
   ]
 correrTodo = runTestTT tests
